@@ -1,5 +1,7 @@
 import UIKit
 
+print("<----------- Solution 1 ----------->")
+
 /// 1. Input n1, n1 is natural number, display the list of number from 0 to n1
 /// Input:
 ///     n1 = 11
@@ -16,6 +18,8 @@ for i in 1...n1 {
     }
 }
 
+print("<----------- Solution 2 ----------->")
+
 /// 2. Input n2, display the multiplication table of n2
 /// Input:
 ///     n2 = 2
@@ -28,6 +32,8 @@ let n2 = 2
 for i in 1...10 {
     print("2. \(n2) x \(i) = \(n2*i)")
 }
+
+print("<----------- Solution 3 ----------->")
 
 /// 3. Input n3, n3 is a natural number, calculate the sum of number from 1 to n3
 /// Input:
@@ -44,6 +50,8 @@ for i in 1...n3 {
         print("3. \(totalSum)")
     }
 }
+
+print("<----------- Solution 4 ----------->")
 
 /// 4. Input n4, n4 is a natural number, calculate the average all numbers from 1 to n4
 /// Input:
@@ -62,6 +70,8 @@ for i in 1...n4 {
     }
 }
 
+print("<----------- Solution 5 ----------->")
+
 /// 5. Input n5, n5 is a natural number, display the sum of odd numbers from 1 to n5
 /// Input:
 ///     n5 = 4
@@ -79,6 +89,8 @@ for i in 1...n5 {
         print("5. \(n5Total)")
     }
 }
+
+print("<----------- Solution 6 ----------->")
 
 /// 6. Input n6, n6 is a natural number, display the average of all even numbers from 1 to n6
 /// Input:
@@ -101,6 +113,7 @@ for i in 1...n6 {
     }
 }
 
+print("<----------- Solution 7 ----------->")
 
 /// 7. Input n7, n7 is a natural number, display all n7 of dividor from 1 to n7
 /// Input:
@@ -120,4 +133,85 @@ for i in 1...n7 {
     }
 }
 
-///
+print("<----------- Solution 8 ----------->")
+
+/// 8. Input n8, display the square asterisk with n8 column and row.
+/// Input:
+///     n8 = 4
+/// Output:
+///     * * * *
+///     * * * *
+///     * * * *
+///     * * * *
+
+var n8 = 4
+
+for _ in 1...n8 {
+    print(String(repeating: "* ", count: n8))
+}
+
+print("<----------- Solution 9 ----------->")
+
+/// 9. Input n9, display the border square asterisk with n column and row.
+/// Input:
+///     n9 = 4
+/// Output:
+///     * * * *
+///     *          *
+///     *          *
+///     * * * *
+
+var n9 = 4
+
+for i in 1...n9 {
+    if i == 1 {
+        print(String(repeating: "* ", count: n9))
+    } else if i == n9 {
+        print(String(repeating: "* ", count: n9))
+    } else {
+        print("*", "*", separator: "     ")
+    }
+}
+
+print("<----------- Solution 10 ----------->")
+
+/// 10. Input n10, display the border square asterisk with n10 column and row and its diagonal line
+/// Input:
+///     n10 = 6
+/// Output:
+///     * * * * * *
+///     * *     * *
+///     *   * *   *
+///     *   * *   *
+///     * *     * *
+///     * * * * * *
+
+var n10 = 6
+
+for i in 1...n10 {
+    if i == 1 {
+        print(String(repeating: "* ", count: n10))
+    } else if i == n10 {
+        print(String(repeating: "* ", count: n10))
+    }
+    
+}
+
+print("<----------- Solution 11 ----------->")
+
+/// 11. Input n row and m column, display rectangle asterisk with n row and m column.
+/// Input:
+///     nRow = 4
+///     mColumn = 6
+/// Output:
+///     * * * * * *
+///     * * * * * *
+///     * * * * * *
+///     * * * * * *
+
+var nRow = 4
+var mColumn = 6
+
+for _ in 1...nRow {
+    print(String(repeating: "* ", count: mColumn))
+}
