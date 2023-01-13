@@ -238,19 +238,105 @@ print("<----------- Solution 11 ----------->")
 
 /// 11. Input n row and m column, display rectangle asterisk with n row and m column.
 /// Input:
-///     nRow = 4
-///     mColumn = 6
+///     nRow1 = 4
+///     mColumn1 = 6
 /// Output:
 ///     * * * * * *
 ///     * * * * * *
 ///     * * * * * *
 ///     * * * * * *
 
-var nRow = 4
-var mColumn = 6
+var nRow1 = 4
+var mColumn1 = 6
 
-for _ in 1...nRow {
-    print(String(repeating: "* ", count: mColumn))
+for _ in 1...nRow1 {
+    print(String(repeating: "* ", count: mColumn1))
 }
 
-/// 12.
+print("<----------- Solution 12 ----------->")
+
+/// 12. Input n row and m column, display the border rectangle asterisk with n row and m column.
+/// Input:
+///     nRow2 = 4
+///     mColumn2 = 6
+/// Output:
+///     * * * * * *
+///     *                   *
+///     *                   *
+///     * * * * * *
+
+var nRow2 = 4
+var mColumn2 = 6
+
+for i in 1...nRow2 {
+    if i == 1 || i == nRow2 {
+        print(String(repeating: "* ", count: mColumn2))
+    } else {
+        print("*", "*", separator: "         ")
+    }
+}
+
+print("<----------- Solution 13 ----------->")
+
+/// 13. Input n13, display the right angle triangle asterisk
+/// Input:
+///     n13 = 4
+/// Output:
+///     *
+///     * *
+///     * * *
+///     * * * *
+
+var n13 = 4
+
+for i in 1...n13 {
+    print(String(repeating: "* ", count: i))
+}
+
+print("<----------- Solution 14 ----------->")
+
+/// 14. Input n14, display the left angle triangle asterisk
+/// Input:
+///     n14 = 4
+/// Output:
+///     * * * *
+///     * * *
+///     * *
+///     *
+
+var n14 = 4
+
+for i in 1...n14 {
+    for _ in stride(from: i, to: n14 + 1, by: 1) {
+        print("* ", terminator: "")
+    }
+    print("")
+}
+
+print("<----------- Solution 15 ----------->")
+
+/// 15. Input n15, display the pine asterisk
+/// Input:
+///     n15 = 5
+/// Output:
+///         *
+///        *   *
+///       *  *  *
+///      *  *  *  *
+///     *  *  *  *  *
+
+print("<----------- Solution 16 ----------->")
+
+/// 16. Input n16, display the diamond asterisk
+/// Input:
+///     n16 = 5
+/// Output:
+///         *
+///        *   *
+///       *  *  *
+///      *  *  *  *
+///     *  *  *  *  *
+///      *  *  *  *
+///       *  *  *
+///        *   *
+///         *
