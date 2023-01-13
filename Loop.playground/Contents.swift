@@ -9,12 +9,21 @@ print("<----------- Solution 1 ----------->")
 ///     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 
 let n1 = 11
+
+for i in 1...n1-1 {
+    print(i, terminator: ", ")
+    if i == n1-1 {
+        print("\(i+1)")
+    }
+}
+
+// Array Version
 var nums = [Int]()
 
 for i in 1...n1 {
     nums.append(i)
-    if i == n1{
-    print("1. \(nums)")
+    if i == n1 {
+        print("\(nums)")
     }
 }
 
@@ -30,7 +39,7 @@ print("<----------- Solution 2 ----------->")
 let n2 = 2
 
 for i in 1...10 {
-    print("2. \(n2) x \(i) = \(n2*i)")
+    print("\(n2) x \(i) = \(n2*i)")
 }
 
 print("<----------- Solution 3 ----------->")
@@ -46,8 +55,10 @@ var totalSum = 0
 
 for i in 1...n3 {
     totalSum += i
-    if i == n3 {
-        print("3. \(totalSum)")
+    if i < n3 {
+        print(i, terminator: " + ")
+    } else if i == n3 {
+        print("\(i) = \(totalSum)")
     }
 }
 
@@ -64,9 +75,15 @@ var subTotal = 0
 
 for i in 1...n4 {
     subTotal += i
+    if i == 1 {
+        print("(\(i)", terminator: " + ")
+    }
+    if i > 1 && i < n4 {
+        print(i, terminator: " + ")
+    }
     if i == n4 {
         let average = Double(subTotal) / Double(n4)
-        print("4. \(average)")
+        print("\(n4)) / \(i) = \(average)")
     }
 }
 
@@ -84,9 +101,12 @@ var n5Total = 0
 for i in 1...n5 {
     if i % 2 != 0 {
         n5Total += i
+        if i < n5-1 {
+            print(i, terminator: " + ")
+        }
     }
     if i == n5 {
-        print("5. \(n5Total)")
+        print("\(i-1) = \(n5Total)")
     }
 }
 
@@ -106,10 +126,13 @@ for i in 1...n6 {
     if i % 2 == 0 {
         n6SubTotal += i
         evenNumberCount += 1
-    }
-    let average = Double(n6SubTotal) / Double(evenNumberCount) // in case of decimal numbers
-    if i == n6 {
-        print("6. \(average)")
+        let average = Double(n6SubTotal) / Double(evenNumberCount) // in case of decimal numbers
+        if i > 1 && i < n6 {
+            print("(\(i)", terminator: " + ")
+        }
+        if i == n6 {
+            print("\(i)) / \(evenNumberCount) = \(average)")
+        }
     }
 }
 
@@ -122,6 +145,21 @@ print("<----------- Solution 7 ----------->")
 ///     1, 2, 5, 10
 
 var n7 = 10
+var dividor2 = 0
+
+for i in 1...n7 {
+    if n7 % i == 0 {
+        dividor2 = i
+        if i < n7 {
+            print(dividor2, terminator: ", ")
+        }
+        if i == n7 {
+            print(dividor2)
+        }
+    }
+}
+
+// Array Version
 var dividor1 = [Int]()
 
 for i in 1...n7 {
@@ -129,7 +167,7 @@ for i in 1...n7 {
         dividor1.append(i)
     }
     if i == n7 {
-        print("7. \(dividor1)")
+        print("\(dividor1)")
     }
 }
 
@@ -164,9 +202,7 @@ print("<----------- Solution 9 ----------->")
 var n9 = 4
 
 for i in 1...n9 {
-    if i == 1 {
-        print(String(repeating: "* ", count: n9))
-    } else if i == n9 {
+    if i == 1 || i == n9 {
         print(String(repeating: "* ", count: n9))
     } else {
         print("*", "*", separator: "     ")
@@ -189,12 +225,13 @@ print("<----------- Solution 10 ----------->")
 var n10 = 6
 
 for i in 1...n10 {
-    if i == 1 {
+    if i == 1 || i == n10 {
         print(String(repeating: "* ", count: n10))
-    } else if i == n10 {
-        print(String(repeating: "* ", count: n10))
+    } else if i == 2 || i == n10-1 {
+        print("* *", "* *", separator: "     ")
+    } else if i > 2 || i < n10-1 {
+        print("*   *", "*   *", separator: " ")
     }
-    
 }
 
 print("<----------- Solution 11 ----------->")
@@ -215,3 +252,5 @@ var mColumn = 6
 for _ in 1...nRow {
     print(String(repeating: "* ", count: mColumn))
 }
+
+/// 12.
