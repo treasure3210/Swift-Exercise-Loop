@@ -336,13 +336,13 @@ print("<----------- Solution 15 ----------->")
 ///     *  *  *  *  *
 
 var n15 = 5
-var i = 0
+var index15 = 0
 
 for _ in 1...n15 {
-    let spaces15 = String(repeating: " ", count: n15 - i - 1)
-    let asterisk15 = String(repeating: "* ", count: i + 1)
+    let spaces15 = String(repeating: " ", count: n15 - index15 - 1)
+    let asterisk15 = String(repeating: "* ", count: index15 + 1)
     print(spaces15 + asterisk15)
-    i += 1
+    index15 += 1
 }
 
 print("<----------- Solution 16 ----------->")
@@ -362,14 +362,14 @@ print("<----------- Solution 16 ----------->")
 ///         *
 
 var n16 = 5
-var j = 0
+var jIndex = 0
 
 /// Top part
 for _ in 1...n16 {
-    let spaces16 = String(repeating: " ", count: n16 - j - 1)
-    let asterisk16 = String(repeating: "* ", count: j + 1)
+    let spaces16 = String(repeating: " ", count: n16 - jIndex - 1)
+    let asterisk16 = String(repeating: "* ", count: jIndex + 1)
     print(spaces16 + asterisk16)
-    j += 1
+    jIndex += 1
 }
 
 /// Lower part
@@ -382,3 +382,52 @@ for i in 1..<n16 {
     }
     print("")
 }
+
+print("<----------- Solution 17 ----------->")
+
+/// 17. Input n17, display likes pattern
+/// Input:
+///     n17 = 4
+/// Output:
+/// 1
+/// 1 2
+/// 1 2 3
+/// 1 2 3 4
+
+var n17 = 4
+
+for i in 1...n17 {
+    for j in 1...i {
+        print("\(j) ", terminator: "")
+    }
+    print("")
+}
+
+print("<----------- Solution 18 ----------->")
+
+/// 18. Input n18, display likes pattern
+/// Input:
+///     n18 = 4
+/// Output:
+/// 1
+/// 2 2
+/// 3 3 3
+/// 4 4 4 4
+
+var n18 = 4
+
+for i in 1...n18 {
+    print(String(repeating: "\(i) ", count: i))
+}
+
+print("<----------- Solution 19 ----------->")
+
+/// 19. Input n19, display likes pattern
+/// Input:
+///     n19 ??
+/// Output:
+///     1
+///     2 3
+///     4 5 6
+///     7 8 9 10
+
