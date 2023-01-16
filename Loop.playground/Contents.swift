@@ -336,11 +336,13 @@ print("<----------- Solution 15 ----------->")
 ///     *  *  *  *  *
 
 var n15 = 5
+var i = 0
 
-for i in 1...n15 {
-    let spaces = String(repeating: " ", count: n15 - 1)
-    let asterisk15 = String(repeating: "*", count: 2 * i + 1)
-    print(spaces + asterisk15)
+for _ in 1...n15 {
+    let spaces15 = String(repeating: " ", count: n15 - i - 1)
+    let asterisk15 = String(repeating: "* ", count: i + 1)
+    print(spaces15 + asterisk15)
+    i += 1
 }
 
 print("<----------- Solution 16 ----------->")
@@ -358,3 +360,21 @@ print("<----------- Solution 16 ----------->")
 ///       *  *  *
 ///        *   *
 ///         *
+
+var n16 = 5
+var j = 0
+
+for _ in 1...n16 {
+    let spaces16 = String(repeating: " ", count: n16 - j - 1)
+    let asterisk16 = String(repeating: "* ", count: j + 1)
+    print(spaces16 + asterisk16)
+    j += 1
+}
+for i in 1...n16 {
+    let spaces16 = String(repeating: " ", count: n16 + j + 1)
+    for _ in stride(from: i, to: n16, by: 1) {
+        let downwardAsterisk16 = String(repeating: "* ", count: j - 1)
+        print(spaces16 + downwardAsterisk16)
+    }
+    print("")
+}
