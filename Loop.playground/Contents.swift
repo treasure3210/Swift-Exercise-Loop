@@ -205,7 +205,7 @@ for i in 1...n9 {
     if i == 1 || i == n9 {
         print(String(repeating: "* ", count: n9))
     } else {
-        print("*", "*", separator: "     ")
+        print("* " + String(repeating: "  ", count: n9 - 2) + "*")
     }
 }
 
@@ -272,7 +272,7 @@ for i in 1...nRow2 {
     if i == 1 || i == nRow2 {
         print(String(repeating: "* ", count: mColumn2))
     } else {
-        print("*", "*", separator: "         ")
+        print("* " + String(repeating: "  ", count: mColumn2 - 2) + "*")
     }
 }
 
@@ -291,6 +291,16 @@ var n13 = 4
 
 for i in 1...n13 {
     print(String(repeating: "* ", count: i))
+}
+
+print("Different Solution, using 2 for loops")
+
+for i in 1...n13 {
+    
+    for _ in 1...i {
+        print("* ", terminator: "")
+    }
+    print("")
 }
 
 print("<----------- Solution 14 ----------->")
@@ -324,6 +334,14 @@ print("<----------- Solution 15 ----------->")
 ///       *  *  *
 ///      *  *  *  *
 ///     *  *  *  *  *
+
+var n15 = 5
+
+for i in 1...n15 {
+    let spaces = String(repeating: " ", count: n15 - 1)
+    let asterisk15 = String(repeating: "*", count: 2 * i + 1)
+    print(spaces + asterisk15)
+}
 
 print("<----------- Solution 16 ----------->")
 
