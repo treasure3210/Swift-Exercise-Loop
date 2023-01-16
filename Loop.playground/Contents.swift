@@ -364,17 +364,21 @@ print("<----------- Solution 16 ----------->")
 var n16 = 5
 var j = 0
 
+/// Top part
 for _ in 1...n16 {
     let spaces16 = String(repeating: " ", count: n16 - j - 1)
     let asterisk16 = String(repeating: "* ", count: j + 1)
     print(spaces16 + asterisk16)
     j += 1
 }
-for i in 1...n16 {
-    let spaces16 = String(repeating: " ", count: n16 + j + 1)
-    for _ in stride(from: i, to: n16, by: 1) {
-        let downwardAsterisk16 = String(repeating: "* ", count: j - 1)
-        print(spaces16 + downwardAsterisk16)
+
+/// Lower part
+for i in 1..<n16 {
+    for _ in 1...i {
+        print(" ", terminator: "")
+    }
+    for _ in 1...n16-i {
+        print("*", terminator: " ")
     }
     print("")
 }
