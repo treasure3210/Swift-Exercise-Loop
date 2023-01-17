@@ -424,10 +424,82 @@ print("<----------- Solution 19 ----------->")
 
 /// 19. Input n19, display likes pattern
 /// Input:
-///     n19 ??
+///     n19 ?? maybe 10?
 /// Output:
 ///     1
 ///     2 3
 ///     4 5 6
 ///     7 8 9 10
 
+var n19 = 10
+var index19 = 0
+
+for i in 1...n19 where index19 < n19 {
+    for _ in 1...i {
+        index19 += 1
+        print("\(index19) ", terminator: "")
+    }
+    print("")
+}
+
+print("<----------- Solution 20 ----------->")
+
+/// 20. Input n20, display likes pattern
+/// Input:
+///     n20 = 10?
+/// Output:
+///        1
+///       2    3
+///      4     5    6
+///     7    8    9    10
+
+var n20 = 10
+var index20 = 0
+
+for i in 1...n20 where index20 < n20 {
+    for _ in 1...n20-i {
+        print(" ", terminator: "")
+    }
+    for _ in 1...i {
+        index20 += 1
+        print("\(index20) ", terminator: "")
+    }
+    print("")
+}
+
+/// 21. Input n21, display likes pattern
+/// Input:
+///     n21 = 4
+/// Output:
+///     1 1 1 1 1 1 1 1
+///     1 2 2 2 2 2 2 1
+///     1 2 3 3 3 3 2 1
+///     1 2 3 4 4 3 2 1
+///     1 2 3 4 4 3 2 1
+///     1 2 3 3 3 3 2 1
+///     1 2 2 2 2 2 2 1
+///     1 1 1 1 1 1 1 1
+
+var n21 = 4
+var s = 2 * n21 - 1
+
+for i in 1...n21 {
+    
+    var m = n21
+    
+    for j in 0...i {
+        print(m, terminator: "")
+        m -= 1
+    }
+    
+    for k in 1...s - 2 * i {
+        print(n21-i, terminator: "")
+    }
+    
+    m = n21 - i + 1
+    
+    for l in 1...i {
+        print(m, terminator: "")
+        m += 1
+    }
+}
