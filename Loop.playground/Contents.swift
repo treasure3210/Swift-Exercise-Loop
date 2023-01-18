@@ -467,6 +467,8 @@ for i in 1...n20 where index20 < n20 {
     print("")
 }
 
+print("<----------- Solution 21 ----------->")
+
 /// 21. Input n21, display likes pattern
 /// Input:
 ///     n21 = 4
@@ -481,25 +483,46 @@ for i in 1...n20 where index20 < n20 {
 ///     1 1 1 1 1 1 1 1
 
 var n21 = 4
-var s = 2 * n21 - 1
+//var s = 2 * n21 - 1
+//
+//for i in 1...n21 {
+//
+//    var m = n21
+//
+//    for j in 0...i {
+//        print(m, terminator: "")
+//        m -= 1
+//    }
+//
+//    for k in 1...s - 2 * i {
+//        print(n21-i, terminator: "")
+//    }
+//
+//    m = n21 - i + 1
+//
+//    for l in 1...i {
+//        print(m, terminator: "")
+//        m += 1
+//    }
+//}
 
-for i in 1...n21 {
-    
-    var m = n21
-    
-    for j in 0...i {
-        print(m, terminator: "")
-        m -= 1
-    }
-    
-    for k in 1...s - 2 * i {
-        print(n21-i, terminator: "")
-    }
-    
-    m = n21 - i + 1
-    
-    for l in 1...i {
-        print(m, terminator: "")
-        m += 1
+/// 22. input n22 as UInt, convert n to binary
+/// Input:
+///     n22 = 2
+/// Output:
+///     10
+
+print("<----------- Solution 22 ----------->")
+
+var n22: UInt = 12
+
+let binary = (String(n22, radix: 2))
+print(binary)
+
+for _ in 1...n22 {
+    if Double(n22) / 2 > 0 {
+        var binaryPart = n22 % 2
+        print(binaryPart, terminator: "")
+        n22 /= 2
     }
 }
