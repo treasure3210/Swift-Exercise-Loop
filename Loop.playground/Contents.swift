@@ -544,6 +544,21 @@ print("<----------- Solution 23 ----------->")
 ///     10
 
 var n23: UInt = 10
+var octalStored = ""
 
 let octal = String(n23, radix: 8)
 print(octal)
+
+for _ in 1...n23 {
+    if Double(n23) / 8 > 0 {
+        var octal = n23 % 8
+        print(octal, terminator: "", to: &octalStored)
+        n23 /= 8
+    }
+}
+
+for i in octalStored.reversed() {
+    print(i, terminator: "")
+}
+
+print("<----------- Solution 24 ----------->")
