@@ -506,23 +506,44 @@ var n21 = 4
 //    }
 //}
 
-/// 22. input n22 as UInt, convert n to binary
+print("<----------- Solution 22 ----------->")
+
+/// 22. input n22 as UInt, convert n22 to binary
 /// Input:
 ///     n22 = 2
 /// Output:
 ///     10
 
-print("<----------- Solution 22 ----------->")
-
 var n22: UInt = 12
+var binaryStored = ""
 
-let binary = (String(n22, radix: 2))
+/// Using String - radix
+let binary = String(n22, radix: 2)
 print(binary)
 
+/// Using For-Loop
 for _ in 1...n22 {
     if Double(n22) / 2 > 0 {
         var binaryPart = n22 % 2
-        print(binaryPart, terminator: "")
+        print(binaryPart, terminator: "", to: &binaryStored) /// Store binary calculation data into binaryStored
         n22 /= 2
     }
 }
+
+for i in binaryStored.reversed() { /// reverse the order of binary for readability
+    print(i, terminator: "")
+}
+
+print("")
+print("<----------- Solution 23 ----------->")
+
+/// 23. input n23 as UInt, convert n23 to Octal
+/// Input:
+///     n22 = 2
+/// Output:
+///     10
+
+var n23: UInt = 10
+
+let octal = String(n23, radix: 8)
+print(octal)
