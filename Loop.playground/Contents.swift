@@ -209,6 +209,19 @@ for i in 1...n9 {
     }
 }
 
+
+for index in 1...n9 {
+    for jIndex in 1...n9 {
+        if index == 1 || index == n9 || jIndex == 1 || jIndex == n9 {
+            print("* ", terminator: "")
+        } else {
+            print("  ", terminator: "")
+        }
+    }
+    print("")
+}
+
+
 print("<----------- Solution 10 ----------->")
 
 /// 10. Input n10, display the border square asterisk with n10 column and row and its diagonal line
@@ -222,17 +235,19 @@ print("<----------- Solution 10 ----------->")
 ///     * *     * *
 ///     * * * * * *
 
-var n10 = 6
+var n10 = 12
 
-for i in 1...n10 {
-    if i == 1 || i == n10 {
-        print(String(repeating: "* ", count: n10))
-    } else if i == 2 || i == n10-1 {
-        print("* *", "* *", separator: "     ")
-    } else if i > 2 || i < n10-1 {
-        print("*   *", "*   *", separator: " ")
+for index in 1...n10 {
+    for jIndex in 1...n10 {
+        if index == jIndex || index + jIndex == n10 + 1 || index == 1 || index == n10 || jIndex == 1 || jIndex == n10 {
+            print("* ", terminator: "")
+        } else {
+            print("  ", terminator: "")
+        }
     }
+    print("")
 }
+
 
 print("<----------- Solution 11 ----------->")
 
@@ -518,8 +533,8 @@ var n22: UInt = 12
 var binaryStored = ""
 
 /// Using String - radix
-let binary = String(n22, radix: 2)
-print(binary)
+let binaryRadix = String(n22, radix: 2)
+print(binaryRadix)
 
 /// Using For-Loop
 for _ in 1...n22 {
@@ -539,16 +554,18 @@ print("<----------- Solution 23 ----------->")
 
 /// 23. input n23 as UInt, convert n23 to Octal
 /// Input:
-///     n22 = 2
+///     n23 = 10
 /// Output:
 ///     10
 
 var n23: UInt = 10
 var octalStored = ""
 
-let octal = String(n23, radix: 8)
-print(octal)
+/// Using String - radix
+let octalRadix = String(n23, radix: 8)
+print(octalRadix)
 
+/// Using For-Loop
 for _ in 1...n23 {
     if Double(n23) / 8 > 0 {
         var octal = n23 % 8
@@ -561,4 +578,45 @@ for i in octalStored.reversed() {
     print(i, terminator: "")
 }
 
+print("")
 print("<----------- Solution 24 ----------->")
+
+/// 24. Input n24 as UInt, convert n24 to Hex
+/// Input:
+///     n24 = 10
+/// Output:
+///     A
+
+var n24: UInt = 10
+
+var hexRadix = String(n24, radix: 16)
+print(hexRadix)
+
+//var hexStored = ""
+//
+//for _ in 1...n24 {
+//    if Double(n24) / 16 > 0 {
+//        var hex = n24 % 16
+//        print(hex, terminator: "", to: &hexStored)
+//        n24 /= 16
+//    }
+//}
+//
+//for item in hexStored.reversed() {
+//    print(item, terminator: "")
+//}
+
+print("")
+print("<----------- Solution 25 ----------->")
+
+var n25 = 10
+var binaryValue = ""
+
+for item in binaryValue {
+    switch item {
+    case "0": n25 = n25 * 2
+    case "1": n25 = n25 * 2 + 1
+    default: break
+    }
+}
+print(n25)
