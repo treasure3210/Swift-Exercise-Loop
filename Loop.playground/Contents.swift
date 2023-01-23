@@ -574,26 +574,22 @@ print("<----------- Solution 24 ----------->")
 /// Output:
 ///     A
 
-var n24: UInt = 10
+var n24 = 10
 
-var hexRadix = String(n24, radix: 16)
-print(hexRadix)
+print(String(n24, radix: 16, uppercase: true))
 
-//var hexStored = ""
-//
-//for _ in 1...n24 {
-//    if Double(n24) / 16 > 0 {
-//        var hex = n24 % 16
-//        print(hex, terminator: "", to: &hexStored)
-//        n24 /= 16
-//    }
-//}
-//
-//for item in hexStored.reversed() {
-//    print(item, terminator: "")
-//}
+var hex = ""
+var quotient = n24
+var hexChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
 
-print("")
+while quotient > 0 {
+    let remainder = quotient % 16 // find remainder to determine the hex value for each calculation
+    quotient /= 16
+    hex = hexChar[remainder] + hex // Add onto existing hex string
+}
+
+print(hex)
+
 print("<----------- Solution 25 ----------->")
 
 var n25 = 10
