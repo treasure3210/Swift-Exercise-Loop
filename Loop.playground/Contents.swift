@@ -235,7 +235,7 @@ print("<----------- Solution 10 ----------->")
 ///     * *     * *
 ///     * * * * * *
 
-var n10 = 12
+var n10 = 6
 
 for index in 1...n10 {
     for jIndex in 1...n10 {
@@ -498,28 +498,15 @@ print("<----------- Solution 21 ----------->")
 ///     1 1 1 1 1 1 1 1
 
 var n21 = 4
-//var s = 2 * n21 - 1
-//
-//for i in 1...n21 {
-//
-//    var m = n21
-//
-//    for j in 0...i {
-//        print(m, terminator: "")
-//        m -= 1
-//    }
-//
-//    for k in 1...s - 2 * i {
-//        print(n21-i, terminator: "")
-//    }
-//
-//    m = n21 - i + 1
-//
-//    for l in 1...i {
-//        print(m, terminator: "")
-//        m += 1
-//    }
-//}
+for index in 1...(n21*2) {
+    for jIndex in 1...(n21*2) {
+        let minValue = min(index, jIndex, n21*2+1-index, n21*2+1-jIndex)
+        print(minValue, terminator: " ")
+        // Find min for each line using nested for loops and print out the min for each inner code
+        // print("min for index: \(index), min for jIndex: \(jIndex), min for n21*2+1-index: \(n21*2+1-index), min for n21*2+1-jIndex: \(n21*2+1-jIndex)")
+    }
+    print("")
+}
 
 print("<----------- Solution 22 ----------->")
 
@@ -620,3 +607,25 @@ for item in binaryValue {
     }
 }
 print(n25)
+
+print("<----------- Solution 28 ----------->")
+/// 28.
+///
+
+var n28 = 10
+var primeNumberStored = ""
+
+for index in 2...n28 {
+        var isPrime = true
+        for jIndex in 2..<index {
+            if index % jIndex == 0 {
+                isPrime = false
+                break
+            }
+        }
+        if isPrime {
+            print(index)
+        }
+    }
+
+print(primeNumberStored)
