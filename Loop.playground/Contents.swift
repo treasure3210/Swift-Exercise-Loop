@@ -592,21 +592,81 @@ print(hex)
 
 print("<----------- Solution 25 ----------->")
 
-var n25 = 10
-var binaryValue = ""
+/// 25. Input s25 as Binary String, convert s to Int
+/// Input:
+///     s25 = 10
+/// Output:
+///     2
 
-for item in binaryValue {
-    switch item {
-    case "0": n25 = n25 * 2
-    case "1": n25 = n25 * 2 + 1
-    default: break
+var s25 = "10"
+
+print(Int(s25, radix: 2)!)
+
+var result25 = 0
+var power25 = 1
+
+for item in s25.unicodeScalars.reversed() {
+    if item.value == 49 {
+        result25 += power25
     }
+    power25 *= 2
 }
-print(n25)
+print(result25)
+
+print("<----------- Solution 26 ----------->")
+
+/// Input s26 as Oct String, convert s26 to Int
+/// Input:
+///     s26 = 12
+/// Output:
+///     10
+
+var s26 = "12"
+
+print(Int(s26, radix: 8)!)
+
+var result26 = 0
+var power26 = 1
+
+for item in s26.unicodeScalars.reversed() {
+    if item.value >= 48 && item.value <= 55 {
+        result26 += (Int(item.value) - 48) * power26
+    }
+    power26 *= 8
+}
+print(result26)
+
+print("<----------- Solution 27 ----------->")
+
+/// 27. Input n27, calculate thesum of the series 1 +11 +111 + 1111 + .. n27 terms
+/// Input:
+///     n27 = 5
+/// Output:
+///     1 + 11 + 111 + 1111 + 11111 = 12345
+
+var n27 = 5
+var sum27 = 0
+var term27 = 1
+var output27 = ""
+
+for item in 1...n27 {
+    sum27 += term27
+    output27 += "\(term27)"
+    if item < n27 {
+        output27 += " + "
+    }
+    term27 = term27 * 10 + 1
+}
+
+output27 += " = \(sum27)"
+print(output27)
 
 print("<----------- Solution 28 ----------->")
-/// 28.
-///
+/// 28. Input n28, list all primer number from 1 to n28
+/// Input:
+///     n28 = 10
+/// Output:
+///     1, 2, 3, 5, 7
 
 var n28 = 10
 var primeNumberStored = ""
@@ -625,3 +685,33 @@ for index in 2...n28 {
     }
 
 print(primeNumberStored)
+
+print("<----------- Solution 29 ----------->")
+
+/// 29. Input n29, display Pascal's triangle
+/// Input:
+///     n29 = 5
+/// Output:
+///         1
+///        1     1
+///       1     2    1
+///      1    3     3     1
+///     1     4     6     4    1
+
+var n29 = 5
+
+for index in 0..<n29 {
+    var row = ""
+    for _ in 0..<n29-index-1 {
+        row += " "
+    }
+    for jIndex in 0..<index {
+        var value = 1
+        for kIndex in 0...jIndex {
+            value = value * (index-kIndex)/(kIndex+1)
+        }
+        row += "\(value) "
+    }
+    print(row)
+}
+
