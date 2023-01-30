@@ -106,7 +106,11 @@ for i in 1...n5 {
         }
     }
     if i == n5 {
-        print("\(i-1) = \(n5Total)")
+        if i % 2 != 0 {
+            print("\(i) = \(n5Total)")
+        } else {
+            print("\(i - 1) = \(n5Total)")
+        }
     }
 }
 
