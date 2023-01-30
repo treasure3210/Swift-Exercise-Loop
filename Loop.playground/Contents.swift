@@ -95,7 +95,7 @@ print("<----------- Solution 5 ----------->")
 /// Output:
 ///     1 + 3 = 4
 
-var n5 = 4
+var n5 = 11
 var n5Total = 0
 
 for i in 1...n5 {
@@ -122,7 +122,7 @@ print("<----------- Solution 6 ----------->")
 /// Output:
 ///     (2 + 4) / 2 = 3
 
-var n6 = 4
+var n6 = 11
 var n6SubTotal = 0
 var evenNumberCount = 0
 var numeratorTotal = 0
@@ -140,6 +140,8 @@ for i in 1...n6 {
         let average = Double(numeratorTotal) / Double(evenNumberCount) // in case of decimal numbers
         if i == n6 {
             print("(\(numeratorStored)) / \(evenNumberCount) = \(Int(average))")
+        } else if i == n6-1 {
+            print("(\(numeratorStored.dropLast(3))) / \(evenNumberCount) = \(Int(average))")
         }
     }
 }
