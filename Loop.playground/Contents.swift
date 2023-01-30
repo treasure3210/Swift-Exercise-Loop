@@ -125,17 +125,21 @@ print("<----------- Solution 6 ----------->")
 var n6 = 4
 var n6SubTotal = 0
 var evenNumberCount = 0
+var numeratorTotal = 0
+var numeratorStored = ""
 
 for i in 1...n6 {
     if i % 2 == 0 {
-        n6SubTotal += i
+        n6SubTotal += 2
+        numeratorTotal += i
         evenNumberCount += 1
-        let average = Double(n6SubTotal) / Double(evenNumberCount) // in case of decimal numbers
-        if i > 1 && i < n6 {
-            print("(\(i)", terminator: " + ")
+        print(n6SubTotal, terminator: "", to: &numeratorStored)
+        if i != n6 {
+            print(" + ", terminator: "", to: &numeratorStored)
         }
+        let average = Double(numeratorTotal) / Double(evenNumberCount) // in case of decimal numbers
         if i == n6 {
-            print("\(i)) / \(evenNumberCount) = \(average)")
+            print("(\(numeratorStored)) / \(evenNumberCount) = \(Int(average))")
         }
     }
 }
