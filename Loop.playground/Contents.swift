@@ -725,3 +725,33 @@ for index in 0..<n29 {
     print(row)
 }
 
+print("<----------- Solution 30 ----------->")
+/// 30. Input n30, displayFibonacci series.
+/// Input:
+///     n30 = 10
+/// Output:
+///     0 1 1 2 3 5 8 13 21 34
+
+var n30 = 10
+
+var numA = 0
+var numB = 1
+var fibonacciStored = ""
+
+for i in 0..<n30 {
+    if i == 0 {
+        print("0", terminator: "", to: &fibonacciStored)
+        fibonacciStored += " "
+    } else if i == 1 {
+        print("1", terminator: "", to: &fibonacciStored)
+        fibonacciStored += " "
+    } else {
+        let numTotal30 = numA + numB
+        numA = numB
+        numB = numTotal30
+        print(numB, terminator: "", to: &fibonacciStored)
+        fibonacciStored += " "
+    }
+}
+
+print(fibonacciStored)
