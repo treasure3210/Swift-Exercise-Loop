@@ -755,3 +755,12 @@ for i in 0..<n30 {
 }
 
 print(fibonacciStored)
+
+print("<----------- Solution 31 ----------->")
+/// 31. Input n31, reverse n31 (Don’t use string)
+/// Input:
+///     n31 = 12345
+/// Output:
+///     54321
+
+var n31 = 12345
